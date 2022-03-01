@@ -2,6 +2,9 @@ import { campus, getWeather } from './modules/weatherAPI';
 
 let cityCode = campus.arabia.cityID;
 
+/**
+ * Change campus when clicking data-reload links
+ */
 const changeCampus = () => {
     const dataReload = document.querySelectorAll('[data-reload]');
     for (let index = 0; index < dataReload.length; index++) {
@@ -22,7 +25,6 @@ const changeCampus = () => {
 };
 
 const init = () => {
-    
     changeCampus();
     getWeather( cityCode );
 };
