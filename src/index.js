@@ -1,13 +1,29 @@
-import { getWeather } from './modules/weatherAPI';
+import { campus, getWeather } from './modules/weatherAPI';
 
-let cityID = 632453;  /* 660129 */
+let cityCode = campus.arabia.cityID;
 
-const  campus = {
-    karamalmi: {
-        cityID: 
+const changeCampus = () => {
+    const dataReload = document.querySelectorAll('[data-reload]');
+    for (let index = 0; index < dataReload.length; index++) {
+        dataReload[index].onclick = function() {
+             
+            if(index === 0 ){
+                cityCode = campus.arabia.cityID;
+            }else if (index === 1){
+                cityCode = campus.karamalmi.cityID;
+            }else if (index === 2){
+                cityCode = campus.myllypuro.cityID;
+            }else if (index === 3){
+                cityCode = campus.myyrmaki.cityID;
+            }
+            getWeather( cityCode );
+        };
     }
 };
 
-window.onload = function() {
-    getWeather( cityID );
+const init = () => {
+    
+    changeCampus();
+    getWeather( cityCode );
 };
+init();

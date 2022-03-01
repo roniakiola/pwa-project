@@ -3,8 +3,23 @@ const cityName = document.getElementById('city');
 const weatherIcon = document.getElementById('icon');
 const description = document.getElementById('desc');
 
+const  campus = {
+    karamalmi: {
+        cityID: 660129
+    },
+    arabia: {
+        cityID: 658225
+    },
+    myllypuro: {
+        cityID: 658225
+    },
+    myyrmaki: {
+        cityID: 632453
+    }
+};
 
 /**
+ * Fetch weather info from openweathermapAPI
  * 
  * @param {String} cityID weathermapAPI id for the city
  */
@@ -26,4 +41,4 @@ function getWeather( cityID ) {
     });
   };
   
-  export {getWeather};
+  export {getWeather, campus};
