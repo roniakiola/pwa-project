@@ -1,3 +1,23 @@
 body {
   margin: 10%;
 }
+
+#weather {
+  width: 150px;
+}
+
+#weather p {
+  margin: 0;
+}
+
+#city {
+  font-weight: bold;
+}
+
+#temp{
+  font-size: 50px;
+}
+
+#icon img{
+  width: 10px;
+}
