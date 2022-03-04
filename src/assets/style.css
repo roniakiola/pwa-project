@@ -125,25 +125,9 @@ main {
   section {
     width: 100%;
     height: 100vh;
+    display: none;
   }
 
-  #playground {
-    background-color: black;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .layer {
-    background-image: url('../img/metropolia_m_oranssi_valkoinen.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: 10;
-    width: 800px;
-    height: 100%;
-    top: 25%;
-    left: 25%;
-}
 
   #lunch {
     background-color: blue;
@@ -179,12 +163,51 @@ main {
 
   #bustimes {
     background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #timetable {
+    width: 60%;
+    background-color: white;
+    text-align: center;
+  }
+
+  .times {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .times ul li {
+    list-style-type: none;
+    text-align: left;
   }
 
   #weather {
     background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #weathertable {
+    width: 60%;
+    background-color: white;
   }
 
   #corona {
     background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
+
+  #coronatable {
+    width: 60%;
+    background-color: white;
+  }
+  
