@@ -1,3 +1,4 @@
+import { carousel } from './modules/carousel';
 import HSLData, { apiUrl } from './modules/hslAPI';
 import { fetchData } from './modules/network';
 import { campus, getWeather } from './modules/weatherAPI';
@@ -6,26 +7,10 @@ let cityCode = campus.arabia.cityID;
 let location = campus.arabia;
 let busses = [];
 
+
 /**
  * Change campus data when clicking data-reload links
  */
-
-/*const createViewCarousel = (activeView) => {
-    const views = document.querySelectorAll('section');
-    for (const view of views){
-        view.style.display = 'none';
-    }
-    if (activeView === views.length){
-        activeView = 0;
-    }
-    views[activeView].style.display = 'block';
-    setTimeout(() => {
-        createViewCarousel(activeView + 1);    
-    }, 5000);
-};
-createViewCarousel(0);*/
-
-
 const changeCampus = () => {
   const dataReload = document.querySelectorAll('[data-reload]');
   for (let index = 0; index < dataReload.length; index++) {
@@ -77,6 +62,7 @@ const changeCampus = () => {
 const init = () => {
   changeCampus();
   getWeather(cityCode);
+  carousel();
 
 
   fetchData(HSLData.apiUrl, {
