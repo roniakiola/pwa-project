@@ -3,18 +3,28 @@ const cityName = document.getElementById('city');
 const weatherIcon = document.getElementById('icon');
 const description = document.getElementById('desc');
 
+
+
 const  campus = {
     karamalmi: {
-        cityID: 660129
+        cityID: 660129,
+        lat: 60.22392668379399,
+        lon: 24.758576204970215
     },
     arabia: {
-        cityID: 658225
+        cityID: 658225,
+        lat: 60.20993686981995,
+        lon: 24.976760374981342
     },
     myllypuro: {
-        cityID: 658225
+        cityID: 658225,
+        lat: 60.22350442023283,
+        lon: 25.07792260031352
     },
     myyrmaki: {
-        cityID: 632453
+        cityID: 632453,
+        lat: 60.258720918813324,
+        lon: 24.8448389565804
     }
 };
 
