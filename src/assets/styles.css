@@ -33,6 +33,14 @@ html, body {
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
 /* ------------------------- Desktop size, menu and navigation ------------------------- */
 
   #menu__toggle {
