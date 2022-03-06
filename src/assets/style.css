@@ -12,6 +12,24 @@ html, body {
   box-sizing: border-box;
 }
 
+h1, h2 {
+   font-family: 'Playfair Display', serif;
+   font-size: 1.5em;
+}
+
+p, ul li {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+}
+
+i {
+  font-size: 30px;
+}
+
+i:hover {
+  color:rgb(232,93,11);
+}
+
 /* ------------------------- Desktop size, menu and navigation ------------------------- */
 
   #menu__toggle {
@@ -20,16 +38,19 @@ html, body {
 
   #menu__toggle:checked + .menu__btn > span {
     transform: rotate(45deg);
+    background-color: #333;
   }
   
   #menu__toggle:checked + .menu__btn > span::before {
     top: 0;
     transform: rotate(0deg);
+    background-color: #333;
   }
 
   #menu__toggle:checked + .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
+    background-color: #333;
   }
 
   #menu__toggle:checked ~ .menu__box {
@@ -38,12 +59,12 @@ html, body {
 
   .menu__btn {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 26px;
-    height: 26px;
+    top: 25px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 100000;
   }
 
   .menu__btn > span,
@@ -53,7 +74,7 @@ html, body {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: white;
     transition-duration: .25s;
   }
 
@@ -77,16 +98,17 @@ html, body {
     margin: 0;
     padding: 80px 0;
     list-style: none;
-    background-color: #ECEFF1;
+    background-color: #FFFFFF;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
+    z-index: 1000;
   }
 
   .menu__item {
     display: block;
     padding: 12px 24px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
@@ -97,23 +119,27 @@ html, body {
     display: block;
     padding: 12px 24px;
     color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 200;
     text-decoration: none;
     transition-duration: .25s;
   }
 
   .menu__item:hover {
-    background-color: #CFD8DC;
+    background-color: rgb(232,93,11);
+    color: #FFFFFF;
   }
 
   .active {
-    background-color: #CFD8DC;
+    background-color: rgb(232,93,11);
+    color: #FFFFFF;
   }
 
   .inner_menu_item:hover {
-    color: red;
+    color: #FFFFFF;
+    background-color: #F99C62;
+    font-weight: 500;
   }
 
 /* ---------------------- Desktop size, main contains all the content ----------------------- */
@@ -125,29 +151,43 @@ main {
   section {
     width: 100%;
     height: 100vh;
-  }
-
-
-  #lunch {
-    background-color: blue;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
   }
 
+  article {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+    border-radius: 10px;
+  }
+
+  /* ---------------------- first view, lunchlist -------------------------- */
+
+  #lunch {
+    background: url('/src/img/shawnanggg-nmpW_WwwVSc-unsplash.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    justify-content: flex-start;
+  }
+
   #lunch figure {
-    margin: 0px;
+    margin: 50px;
   }
 
   #lunch figure img {
     width: 300px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
   }
 
   #lunchlist {
     width: 60%;
     background-color: white;
     text-align: center;
+    font-weight: 200;
+  }
+
+  #lunchlist i {
+    font-size: 30px;
   }
 
   .lists {
@@ -158,14 +198,16 @@ main {
   .lists ul li {
     list-style-type: none;
     text-align: left;
+    padding-bottom: 15px;
   }
 
+  /* ---------------------------- second view, bustimetable -------------------------------- */
+
   #bustimes {
-    background-color: yellow;
-    display: flex;
-    align-items: center;
+    background: url('/src/img/hsl_4853579.jpeg') no-repeat;
+    background-position: center center;
+    background-size: cover;
     justify-content: center;
-    flex-direction: column;
   }
 
   #timetable {
@@ -174,39 +216,66 @@ main {
     text-align: center;
   }
 
+  #timetable i {
+    font-size: 30px;
+  }
+
   .times {
     display: flex;
     justify-content: space-around;
   }
 
+  #destination {
+    color: rgb(232,93,11);
+  }
+
   .times ul li {
     list-style-type: none;
     text-align: left;
+    margin-bottom: 15px;
   }
 
+
+  /* ---------------------------- third view, weather ---------------------- */
+
   #weather {
-    background-color: orange;
-    display: flex;
-    align-items: center;
+    background: url('/src/img/photo-1503919483171-9ffc1debc390.jpeg') no-repeat;
+    background-position: center;
+    background-size: cover;
     justify-content: center;
-    text-align: center;
   }
 
   #weathertable {
-    width: 60%;
+    width: 20%;
+    height: 40vh;
     background-color: white;
-  }
-
-  #corona {
-    background-color: red;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+  }
+
+  /* ------------------------------ fourth view, corona info ----------------------- */
+
+  #corona {
+    background: url('/src/img/photo-1585435421671-0c16764628ce.jpeg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
   }
 
   #coronatable {
     width: 60%;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
   }
+
+#text h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
   

@@ -9,7 +9,7 @@
     if (activeView === views.length){
         activeView = 0;
     }
-    views[activeView].style.display = 'block';
+    views[activeView].style.display = 'flex';
     setTimeout(() => {
         createViewCarousel(activeView + 1);    
     }, 5000);
