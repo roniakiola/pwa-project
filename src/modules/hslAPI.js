@@ -30,7 +30,7 @@ const getQueryForNextRidesByStopId = (id) => {
 
 const getQueryForStopsByLocation = (location) => {
     return `{
-      stopsByRadius(lat: ${location.lat}, lon: ${location.lon}, radius: 600, first: 10) {
+      stopsByRadius(lat: ${location.lat}, lon: ${location.lon}, radius: 600, first: 6) {
         edges {
           node {
             stop {
