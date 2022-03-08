@@ -164,7 +164,7 @@ main {
   /* ---------------------- first view, lunchlist -------------------------- */
 
   #lunch {
-    background: url('/src/img/shawnanggg-nmpW_WwwVSc-unsplash.jpg') no-repeat;
+    background: url('../img/shawnanggg-nmpW_WwwVSc-unsplash.jpg') no-repeat;
     background-position: center center;
     background-size: cover;
     justify-content: flex-start;
@@ -208,7 +208,7 @@ main {
   /* ---------------------------- second view, bustimetable -------------------------------- */
 
   #bustimes {
-    background: url('/src/img/hsl_4853579.jpeg') no-repeat;
+    background: url('../img/hsl_4853579.jpeg') no-repeat;
     background-position: center center;
     background-size: cover;
     justify-content: center;
@@ -252,7 +252,7 @@ main {
   /* ---------------------------- third view, weather ---------------------- */
 
   #weather {
-    background: url('/src/img/photo-1503919483171-9ffc1debc390.jpeg') no-repeat;
+    background: url('../img/photo-1503919483171-9ffc1debc390.jpeg') no-repeat;
     background-position: center;
     background-size: cover;
     justify-content: center;
@@ -271,7 +271,7 @@ main {
   /* ------------------------------ fourth view, corona info ----------------------- */
 
   #corona {
-    background: url('/src/img/photo-1585435421671-0c16764628ce.jpeg') no-repeat;
+    background: url('../img/photo-1585435421671-0c16764628ce.jpeg') no-repeat;
     background-position: center;
     background-size: cover;
     justify-content: center;

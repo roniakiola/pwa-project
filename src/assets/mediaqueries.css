@@ -76,7 +76,7 @@
      }
   
     #lunch {
-        background: url('/src/img/photo-1597484389225-c68a9f0fa106.jpeg');
+        background: url('../img/photo-1597484389225-c68a9f0fa106.jpeg');
         background-position: center center;
         background-size: cover;
         justify-content: flex-end;
