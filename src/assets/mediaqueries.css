@@ -178,6 +178,19 @@
   }
 
   @media screen and (max-width: 480px) {
+
+    #lunch figure {
+        margin: 10px;
+    }
+
+    #lunch figure img {
+        width: 200px;
+    }
+
+    #lunchlist {
+        height: 100%;
+    }
+
     .lists ul li {
         font-size: 0.6em;
        
