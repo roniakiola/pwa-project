@@ -184,15 +184,19 @@ main {
     background-color: white;
     text-align: center;
     font-weight: 200;
-  }
-
-  #lunchlist i {
-    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
 
   .lists {
     display: flex;
     justify-content: space-around;
+  }
+
+  .lists ul {
+    padding: 0;
+    margin: 0;
   }
 
   .lists ul li {
@@ -214,15 +218,24 @@ main {
     width: 60%;
     background-color: white;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
 
   #timetable i {
     font-size: 30px;
+    margin-bottom: 15px;
   }
 
   .times {
     display: flex;
     justify-content: space-around;
+  }
+
+  .times ul {
+    padding: 0;
+    margin: 0;
   }
 
   #destination {
@@ -277,5 +290,3 @@ main {
   margin-bottom: 50px;
 }
 
-
-  
