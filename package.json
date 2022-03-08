@@ -21,8 +21,17 @@
     "terser-webpack-plugin": "^5.2.5",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0",
+    "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "main": "webpack.common.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roniakiola/pwa-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roniakiola/pwa-project/issues"
+  },
+  "homepage": "https://github.com/roniakiola/pwa-project#readme"
 }
