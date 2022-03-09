@@ -14,13 +14,13 @@ const init = async () => {
   const sodexoMyyrmakiEn = await SodexoData.myyrmakiEn;
   console.log(
     fazerArabiaFi,
-    // fazerArabiaEn,
-    // fazerKaramalmiFi,
-    // fazerKaramalmiEn,
-    // sodexoMyllypuroFi,
-    // sodexoMyllypuroEn,
-    sodexoMyyrmakiFi
-    // sodexoMyyrmakiEn
+    fazerArabiaEn,
+    fazerKaramalmiFi,
+    fazerKaramalmiEn,
+    sodexoMyllypuroFi,
+    sodexoMyllypuroEn,
+    sodexoMyyrmakiFi,
+    sodexoMyyrmakiEn
   );
 };
 init();
