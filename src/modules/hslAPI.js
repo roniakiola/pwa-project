@@ -27,10 +27,15 @@ const getQueryForNextRidesByStopId = (id) => {
  }`;
 };
 
-
+/**
+ * Get busdata from hsl api 
+ * 
+ * @param {String} location - campus from campus object
+ * @returns busses from diffirent stops in the radius
+ */
 const getQueryForStopsByLocation = (location) => {
     return `{
-      stopsByRadius(lat: ${location.lat}, lon: ${location.lon}, radius: 600, first: 10) {
+      stopsByRadius(lat: ${location.lat}, lon: ${location.lon}, radius: 500, first: 10) {
         edges {
           node {
             stop {

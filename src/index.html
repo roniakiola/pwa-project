@@ -1,99 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/styles.css" />
-    <title>Metropolia - Arabia</title>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="PWA- and DS-project done in Metropolia University of Applied Sciences,
+    course: web technology and media platforms">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+  <link rel="stylesheet" type="text/css" href="assets/mediaqueries.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:wght@200;500&display=swap"
+    rel="stylesheet">
+  <title>Metropolia - Arabia</title>
+  <script src="https://kit.fontawesome.com/86f6734f3f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-
-    <div class="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
-          <span></span>
-        </label>
-    
-        <ul class="menu__box">
-          <li><a class="menu__item active" data-reload href="#arabia">Arabia</a></li>
-            <li><a class="inner_menu_item" href="#lunch">Lounaslista</a></li>
-            <li><a class="inner_menu_item" href="#bustimes">HSL Bussiaikataulu</a>
-            <li><a class="inner_menu_item" href="#weather">Sää</a>
-            <li><a class="inner_menu_item" href="#corona">Koronatiedote</a>
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+    <ul class="menu__box">
+      
+      <li><a class="inner_menu_item" href="#lunch">Lounaslista</a></li>
+      <li><a class="inner_menu_item" href="#bustimes">HSL Bussiaikataulu</a>
+      <li><a class="inner_menu_item" href="#weather1">Sää</a>
+      <li><a class="inner_menu_item" href="#corona">Koronatiedote</a>
         <br><br>
-          <li><a class="menu__item" data-reload href="#karamalmi">Karamalmi</a></li>
-          <li><a class="menu__item" data-reload href="#myllypuro">Myllypuro</a></li>
-          <li><a class="menu__item" data-reload href="#myyrmaki">Myyrmäki</a></li>
-        </ul>
-      </div>
+      <li><a class="menu__item " data-reload href="#arabia">Arabia</a></li>
+      <li><a class="menu__item active" data-reload href="#karamalmi">Karamalmi</a></li>
+      <li><a class="menu__item" data-reload href="#myllypuro">Myllypuro</a></li>
+      <li><a class="menu__item" data-reload href="#myyrmäki">Myyrmäki</a></li>
+    </ul>
+  </div>
+  <main>
 
-      <main>
+      <!-- All viewing screens are shared into own sections -->
 
-        <section id="lunch">
+      <!-- FIRST VIEW -->
 
-          <figure>
-            <img src="./assets/img/metropolia_m_oranssi_valkoinen.png" alt="metropolia logo" width="200px">
-          </figure>
+    <section id="lunch">
+      <figure>
+        <img src="./assets/img/metropolia_m_oranssi_valkoinen.png" alt="Metropolia Ammattikorkeakoulu">
+      </figure>
 
-          <article id="lunchlist">
-            <h1>Lounaslista 3.3.2022</h1>
-            <h2>Food&Co Karamalmi</h2>
-            <br><br>
-            <div class="lists">
-              <ul id="courses">
-                <li>Course 1</li>
-                <li>Course 2</li>
-                <li>Course 3</li>
-                <li>Course 4</li>
-              </ul>
-              <ul id="allergens">
-                <li>G, L</li>
-                <li>VEG</li>
-                <li>G, L, M, Veg, VS</li>
-                <li>A</li>
-              </ul>
-              <ul id="prices">
-                <li>2,60 / 3,70 / 5,50</li>
-                <li>2,60 / 3,70 / 5,50</li>
-                <li>3,10 / 4,70 / 6,50</li>
-                <li>1 / 2,20 / 3</li>
-              </ul>
-            </div>
-          </article>
+      <article id="lunchlist">
 
-        </section>
+        <h1>Lounaslista 3.3.2022</h1>
+        <h2>Food&Co Karamalmi</h2>
+        <i class="fas fa-hamburger"></i>
+        <br><br>
+        <div class="lists">
+          <ul id="courses">
+            <li>Course 1</li>
+            <li>Course 2</li>
+            <li>Course 3</li>
+            <li>Course 4</li>
+          </ul>
+          <ul id="allergens">
+            <li>G, L</li>
+            <li>VEG</li>
+            <li>G, L, M, Veg, VS</li>
+            <li>A</li>
+          </ul>
+          <ul id="prices">
+            <li>2,60 / 3,70 / 5,50</li>
+            <li>2,60 / 3,70 / 5,50</li>
+            <li>3,10 / 4,70 / 6,50</li>
+            <li>1 / 2,20 / 3</li>
+          </ul>
+        </div>
+      </article>
+    </section>
 
-        <section id="bustimes">
+    <!-- SECOND VIEW -->
 
-            <div id="hsl-data">
-                <ul id="bus-list"></ul>
-              </div>
+    <section id="bustimes">
+      <article id="timetable">
+        <h2>HSL Bussiaikataulu</h2>
+        <i class="fas fa-bus"></i>
+        <br><br>
+        <div class="times">
+          <ul id="busnumber">
+          </ul>
+          <ul id="destination">
+          </ul>
+          <ul id="arrival">
+          </ul>
+        </div>
+      </article>
+    </section>
 
-        </section>
+    <!-- THIRD VIEW -->
 
-        <section id="weather1">
-            <div id="weather">
-                <p id="city"></p>
-                <p id="temp"></p>
-                <span id="icon"><img  src="assets/icons/unknown.png" alt=""></span>
-                <p id="desc"></p>
-              </div>
-          
-              
+    <section id="weather1">
+      <article id="weathertable">
+        <div id="weather">
+          <p id="city"></p>
+          <p id="temp"></p>
+          <span id="icon"><img src="assets/icons/unknown.png" alt=""></span>
+          <p id="desc"></p>
+      </article>
+    </section>
 
-        </section>
-
-        <section id="corona">
-          <article id="coronatable">
-            <h2>Metropöljän koronalinjaus</h2>
-            <p>Kuollaan kohta kaikki</p>
-            <p>Käyttäkkee maskeja ja desinfioikaa käsiänne</p>
-          </article>
-         </section>
-
-
-      </main>
+     <!-- FOURTH VIEW -->
+     
+    <section id="corona">
+      <article id="coronatable">
+        <div id="text">
+          <h2>Metropolian koronaohjeistus</h2>
+          <p>Kampuksilla työskenneltäessä noudatetaan edelleen kaikkia terveysturvallisuutteen liittyviä ohjeita:
+            tullaan vain terveenä paikalle, käytetään maskia, pidetään
+            välimatkaa sekä noudatetaan yskimis- ja käsihygieniaa.<br><br>
+            Maskeja voi kysyä kampusten aulapalveluista. Mikäli henkilö
+            ei terveydellisistä syistä pysty käyttämään kasvomaskia,
+            suositellaan käytettävän suojavisiiriä.<br><br>
+            Mikäli opiskelijalla on opettajan arvion mukaan yleisesti COVID-19
+            -infektioon liitettäviä oireita tai jos hän ei pidä asianmukaista kasvomaskia tilanteessa,
+            jossa opettajan arvion mukaan on riskinä turvavälin puuttuminen, on Metropolian henkilökunnan
+            jäsenellä ammattikorkeakoululain 38 §:n mukaisesti oikeus määrätä opiskelija poistumaan tilasta,
+            jossa opetusta annetaan. Opiskelijaa tulee kuulla ennen poistamismääräystä.
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
+
 </html>
