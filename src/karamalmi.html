@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="PWA- and DS-project done in Metropolia University of Applied Sciences,
+    course: web technology and media platforms">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/mediaqueries.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway:wght@200;500&display=swap" rel="stylesheet">  
     <title>Metropolia - Karamalmi</title>
-
+    <script src="https://kit.fontawesome.com/86f6734f3f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 
     <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
@@ -22,7 +27,7 @@
             <li><a class="inner_menu_item" href="#lunch">Lounaslista</a></li>
             <li><a class="inner_menu_item" href="#bustimes">HSL Bussiaikataulu</a>
             <li><a class="inner_menu_item" href="#weather">Sää</a>
-              <li><a class="inner_menu_item" href="#corona">Koronatiedote</a>
+            <li><a class="inner_menu_item" href="#corona">Koronatiedote</a>
         <br><br>
           <li><a class="menu__item" href="arabia.html">Arabia</a></li>
           <li><a class="menu__item" href="myllypuro.html">Myllypuro</a></li>
@@ -34,22 +39,110 @@
 
         <section id="lunch">
 
+          <figure>
+            <img src="./img/metropolia_m_oranssi_valkoinen.png" alt="Metropolia Ammattikorkeakoulu">
+          </figure>
+
+          <article id="lunchlist">
+            
+            <h1>Lounaslista 3.3.2022</h1>
+            <h2>Food&Co Karamalmi</h2>
+            <br>
+            <div class="lists">
+            <ul id="courses">
+                <li>Perunamuusia, lihapullia ruskeassa kastikkeessa</li>
+                <li>Kana-kasvispizza</li>
+                <li>Vuohenjuusto-tomaattikeittoa, krutonkeja</li>
+                <li>Marianne-marjarahkaa</li>
+              </ul>
+              <ul id="allergens">
+                <li>G, L</li>
+                <li>VEG</li>
+                <li>G, L, M, Veg, VS</li>
+                <li>A</li>
+              </ul>
+              <ul id="prices">
+                <li>2,60 / 3,70 / 5,50</li>
+                <li>2,60 / 3,70 / 5,50</li>
+                <li>3,10 / 4,70 / 6,50</li>
+                <li>1 / 2,20 / 3</li>
+              </ul>
+            </div>
+          </article>
+
         </section>
 
         <section id="bustimes">
+          <article id="timetable">
+            <h2>HSL Bussiaikataulu</h2>
+            <i class="fas fa-bus"></i>
+            <br><br>
+            <div class="times">
+              <ul id="busnumber">
+                <li>200</li>
+                <li>224</li>
+                <li>531</li>
+                <li>236</li>
+                <li>200</li>
+                <li>224</li>
+                <li>531</li>
+                <li>236</li>
+                <li>531</li>
+                <li>236</li>
+              </ul>
+              <ul id="destination">
+                <li>Espoon keskus</li>
+                <li>Tuomarila</li>
+                <li>Espoon keskus</li>
+                <li>Serena</li>
+                <li>Espoon keskus</li>
+                <li>Tuomarila</li>
+                <li>Espoon keskus</li>
+                <li>Serena</li>
+                <li>Espoon keskus</li>
+                <li>Serena</li>
+              </ul>
+              <ul id="arrival">
+                <li>1 min</li>
+                <li>12:39</li>
+                <li>12:41</li>
+                <li>12:50</li>
+                <li>1 min</li>
+                <li>12:39</li>
+                <li>12:41</li>
+                <li>12:50</li>
+                <li>12:41</li>
+                <li>12:50</li>
+              </ul>
+            </div>
+           </article>
 
         </section>
 
         <section id="weather">
+          <article id="weathertable">
+            <h2>Helsinki</h2>
+            <p>+2 astetta</p>
+            <p>Aurinkoista</p>
+          </article>
 
         </section>
 
         <section id="corona">
-
-        </section>
+          <article id="coronatable">
+            <div id="text">
+              <h2>Metropolian koronaohjeistus</h2>
+              <p>Tule vain terveenä paikalle<br>
+              Pidä huolta hyvästä käsi- ja yskimishygieniasta<br>
+            Pidäthän välimatkaa muihin<br>
+            Käytäthän maskia tai visiiriä oleskellessasi kampuksella</p>
+            </div>
+          </article>
+         </section>
 
 
       </main>
-    
+
+ <script src="index.js"></script>
 </body>
 </html>
