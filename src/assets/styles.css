@@ -1,5 +1,3 @@
-
-
 #weather {
   width: 150px;
 }
@@ -12,11 +10,11 @@
   font-weight: bold;
 }
 
-#temp{
+#temp {
   font-size: 50px;
 }
 
-#icon img{
+#icon img {
   width: 40px;
 }
 
@@ -28,7 +26,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
 }
@@ -37,12 +36,14 @@ html, body {
   box-sizing: border-box;
 }
 
-h1, h2 {
-   font-family: 'Playfair Display', serif;
-   font-size: 1.5em;
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
 }
 
-p, ul li {
+p,
+ul li {
   font-family: 'Raleway', sans-serif;
   font-size: 1.2em;
 }
@@ -52,265 +53,276 @@ i {
 }
 
 i:hover {
-  color:rgb(232,93,11);
+  color: rgb(232, 93, 11);
 }
 
 /* ------------------------- Desktop size, menu and navigation ------------------------- */
 
-  #menu__toggle {
-    display: none;
-  }
+#menu__toggle {
+  display: none;
+}
 
-  #menu__toggle:checked + .menu__btn > span {
-    transform: rotate(45deg);
-    background-color: #333;
-  }
-  
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-    background-color: #333;
-  }
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+  background-color: #333;
+}
 
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-    background-color: #333;
-  }
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+  background-color: #333;
+}
 
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background-color: #333;
+}
 
-  .menu__btn {
-    position: fixed;
-    top: 25px;
-    left: 15px;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    z-index: 100000;
-  }
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
 
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transition-duration: .25s;
-  }
+.menu__btn {
+  position: fixed;
+  top: 25px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 100000;
+}
 
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition-duration: 0.25s;
+}
 
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
 
-  .menu__box {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height: 100%;
-    margin: 0;
-    padding: 80px 0;
-    list-style: none;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-    z-index: 1000;
-  }
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
 
-  .menu__item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    transition-duration: .25s;
-  }
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+  z-index: 1000;
+}
 
-  .inner_menu_item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    text-decoration: none;
-    transition-duration: .25s;
-  }
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
 
-  .menu__item:hover {
-    background-color: rgb(232,93,11);
-    color: #FFFFFF;
-  }
+.inner_menu_item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
 
-  .active {
-    background-color: rgb(232,93,11);
-    color: #FFFFFF;
-  }
+.menu__item:hover {
+  background-color: rgb(232, 93, 11);
+  color: #ffffff;
+}
 
-  .inner_menu_item:hover {
-    color: #FFFFFF;
-    background-color: #F99C62;
-    font-weight: 500;
-  }
+.active {
+  background-color: rgb(232, 93, 11);
+  color: #ffffff;
+}
+
+.inner_menu_item:hover {
+  color: #ffffff;
+  background-color: #f99c62;
+  font-weight: 500;
+}
 
 /* ---------------------- Desktop size, main contains all the content ----------------------- */
 
 main {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-  section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
-  article {
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
-    border-radius: 10px;
-  }
+article {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
 
-  /* ---------------------- first view, lunchlist -------------------------- */
+/* ---------------------- first view, lunchlist -------------------------- */
 
-  #lunch {
-    background: url('./img/shawnanggg-nmpW_WwwVSc-unsplash.jpg') no-repeat;
-    background-position: center center;
-    background-size: cover;
-    justify-content: flex-start;
-  }
+#lunch {
+  background: url('./img/shawnanggg-nmpW_WwwVSc-unsplash.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  justify-content: flex-start;
+}
 
-  #lunch figure {
-    margin: 50px;
-  }
+#lunch figure {
+  margin: 50px;
+}
 
-  #lunch figure img {
-    width: 300px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
-  }
+#lunch figure img {
+  width: 300px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
+}
 
-  #lunchlist {
-    width: 60%;
-    background-color: white;
-    text-align: center;
-    font-weight: 200;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-  }
+#lunchlist {
+  width: 60%;
+  background-color: white;
+  text-align: center;
+  font-weight: 200;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
 
-  .lists {
-    display: flex;
-    justify-content: space-evenly;
-  }
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.meal-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border-bottom: solid 1px black;
+}
+.meal-container:nth-last-child(1) {
+  border: none;
+}
+.meal-name {
+  display: flex;
+  align-items: center;
+  text-align: start;
+}
+.meal-allergens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meal-prices {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.meal-prices p {
+  margin: 0.25em;
+}
+/* ---------------------------- second view, bustimetable -------------------------------- */
 
-  .lists ul {
-    padding: 0;
-    margin: 0;
-  }
+#bustimes {
+  background: url('./img/hsl_4853579.jpeg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  justify-content: center;
+}
 
-  .lists ul li {
-    list-style-type: none;
-    text-align: left;
-    padding-bottom: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-  }
+#timetable {
+  width: 60%;
+  background-color: white;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
 
-  /* ---------------------------- second view, bustimetable -------------------------------- */
+#timetable i {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
 
-  #bustimes {
-    background: url('./img/hsl_4853579.jpeg') no-repeat;
-    background-position: center center;
-    background-size: cover;
-    justify-content: center;
-  }
+.times {
+  display: flex;
+  justify-content: space-around;
+}
 
-  #timetable {
-    width: 60%;
-    background-color: white;
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-  }
+.times ul {
+  padding: 0;
+  margin: 0;
+}
 
-  #timetable i {
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
+#destination {
+  color: rgb(232, 93, 11);
+}
 
-  .times {
-    display: flex;
-    justify-content: space-around;
-  }
+.times ul li {
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 15px;
+}
 
-  .times ul {
-    padding: 0;
-    margin: 0;
-  }
+/* ---------------------------- third view, weather ---------------------- */
 
-  #destination {
-    color: rgb(232,93,11);
-  }
+#weather1 {
+  background: url('./img/photo-1503919483171-9ffc1debc390.jpeg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
 
-  .times ul li {
-    list-style-type: none;
-    text-align: left;
-    margin-bottom: 15px;
-  }
+#weathertable {
+  width: 20%;
+  height: 40vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+/* ------------------------------ fourth view, corona info ----------------------- */
 
-  /* ---------------------------- third view, weather ---------------------- */
+#corona {
+  background: url('./img/photo-1585435421671-0c16764628ce.jpeg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+}
 
-  #weather1 {
-    background: url('./img/photo-1503919483171-9ffc1debc390.jpeg') no-repeat;
-    background-position: center;
-    background-size: cover;
-    justify-content: center;
-  }
-
-  #weathertable {
-    width: 20%;
-    height: 40vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* ------------------------------ fourth view, corona info ----------------------- */
-
-  #corona {
-    background: url('./img/photo-1585435421671-0c16764628ce.jpeg') no-repeat;
-    background-position: center;
-    background-size: cover;
-    justify-content: center;
-  }
-
-  #coronatable {
-    width: 60%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-  }
+#coronatable {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
 
 #text h2 {
   text-align: center;
