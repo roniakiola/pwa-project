@@ -205,6 +205,11 @@ main {
     padding-bottom: 15px;
   }
 
+  #allergens ul li {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
   /* ---------------------------- second view, bustimetable -------------------------------- */
 
   #bustimes {
