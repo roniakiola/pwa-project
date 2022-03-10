@@ -59,6 +59,10 @@ let renderCourseList = (menu) => {
     /**
      * if currentMenu has prices included - convert to string and split into array. For each value in array create DOM element 'p' and set value
      */
+    mealName.appendChild(meal);
+    mealAllergens.appendChild(allergens);
+    mealContainer.append(mealName, mealAllergens);
+
     if (course[2]) {
       let priceArr = course[2].toString().split('/');
       priceArr.forEach((value) => {
@@ -66,10 +70,8 @@ let renderCourseList = (menu) => {
         prices.innerHTML = value;
         mealPrices.appendChild(prices);
       });
+      mealContainer.appendChild(mealPrices);
     }
-    mealName.appendChild(meal);
-    mealAllergens.appendChild(allergens);
-    mealContainer.append(mealName, mealAllergens, mealPrices);
     courseList.appendChild(mealContainer);
   });
 };
