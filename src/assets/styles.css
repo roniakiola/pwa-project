@@ -1,26 +1,3 @@
-#weather {
-  width: 150px;
-}
-
-#weather p {
-  margin: 0;
-}
-
-#city {
-  font-weight: bold;
-}
-
-#temp {
-  font-size: 50px;
-}
-
-#icon img {
-  width: 40px;
-}
-
-.hidden {
-  display: none;
-}
 /* ------------------------- Base settings for html, body and * --------------------------- */
 html {
   scroll-behavior: smooth;
@@ -168,6 +145,30 @@ i:hover {
   font-weight: 500;
 }
 
+figure {
+  margin: 20px;
+}
+
+figure img {
+  width: 150px;
+}
+
+button {
+  background-color: rgb(232, 93, 11);
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-left: 25px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: #333;
+}
+
 /* ---------------------- Desktop size, main contains all the content ----------------------- */
 
 main {
@@ -187,6 +188,9 @@ article {
   border-radius: 10px;
 }
 
+.hidden {
+  display: none;
+}
 /* ---------------------- first view, lunchlist -------------------------- */
 
 #lunch {
@@ -196,55 +200,49 @@ article {
   justify-content: flex-start;
 }
 
-#lunch figure {
-  margin: 50px;
-}
-
-#lunch figure img {
-  width: 300px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
-}
-
 #lunchlist {
-  width: 60%;
+  width: 90%;
   background-color: white;
   text-align: center;
   font-weight: 200;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+  margin-top: 50px;
 }
 
 .lists {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .meal-container {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
-  border-bottom: solid 1px black;
 }
-.meal-container:nth-last-child(1) {
-  border: none;
-}
+
 .meal-name {
   display: flex;
   align-items: center;
   text-align: start;
 }
+
 .meal-allergens {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .meal-prices {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .meal-prices p {
   margin: 0.25em;
 }
+
 /* ---------------------------- second view, bustimetable -------------------------------- */
 
 #bustimes {
@@ -307,6 +305,26 @@ article {
   justify-content: center;
 }
 
+#weather {
+  width: 150px;
+  text-align: center;
+}
+
+#weather p {
+  margin: 0;
+}
+
+#city {
+  font-weight: bold;
+}
+
+#temp {
+  font-size: 50px;
+}
+
+#icon img {
+  width: 40px;
+}
 /* ------------------------------ fourth view, corona info ----------------------- */
 
 #corona {
