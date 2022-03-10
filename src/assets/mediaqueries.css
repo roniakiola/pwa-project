@@ -2,10 +2,6 @@
 
 /* --------------------------------------- max-width: 1400px -------------------------------------------- */
 @media screen and (max-width: 1400px) {
-
-    #lunchlist {
-      width: 70%;
-    }
   
     #timetable {
       width: 70%;
@@ -17,10 +13,6 @@
   
   @media screen and (max-width: 1300px) {
   
-    #lunchlist {
-      width: 80%;
-    }
-  
     #timetable {
       width: 80%;
     }
@@ -28,6 +20,7 @@
    i {
     font-size: 25px;
   }
+
   }
   
   /* --------------------------------------- max-width: 1100px -------------------------------------------- */
@@ -80,17 +73,24 @@
      p, ul li {
        font-size: 1.2em;
      }
+
+     .menu__btn > span,
+      .menu__btn > span::before,
+      .menu__btn > span::after {
+        background-color: #333;
+      }
   
     #lunch {
-        background: url('./img/photo-1597484389225-c68a9f0fa106.jpeg');
         background-position: center center;
         background-size: cover;
-        justify-content: flex-end;
+        
     }
  
     #lunchlist {
       width: 100%;
-      height: 65%;
+      height: 100%;
+      margin-top: 0;
+      border-radius: 0;
     }
   
     .lists ul {
