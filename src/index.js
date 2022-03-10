@@ -253,23 +253,31 @@ const init = async () => {
         } else if (index === 4) {
           if (location === campus.arabia && language === 'fi') {
             currentMenu = fazerArabiaFi;
-          } else if (language === 'en') {
+            title.innerHTML = 'Lounaslista Arabia';
+          } else if (location === campus.arabia && language === 'en') {
             currentMenu = fazerArabiaEn;
+            title.innerHTML = 'Lunch Menu Arabia';
           }
           if (location === campus.karamalmi && language === 'fi') {
             currentMenu = fazerKaramalmiFi;
-          } else if (language === 'en') {
+            title.innerHTML = 'Lounaslista Karamalmi';
+          } else if (location === campus.karamalmi && language === 'en') {
             currentMenu = fazerKaramalmiEn;
+            title.innerHTML = 'Lunch Menu Karamalmi';
           }
           if (location === campus.myllypuro && language === 'fi') {
             currentMenu = sodexoMyllypuroFi;
-          } else if (language === 'en') {
+            title.innerHTML = 'Lounaslista Myllypuro';
+          } else if (location === campus.myllypuro && language === 'en') {
             currentMenu = sodexoMyllypuroEn;
+            title.innerHTML = 'Lunch Menu Myllypuro';
           }
           if (location === campus.myyrmaki && language === 'fi') {
             currentMenu = sodexoMyyrmakiFi;
-          } else if (language === 'en') {
+            title.innerHTML = 'Lounaslista Myyrmäki';
+          } else if (location === campus.myyrmaki && language === 'en') {
             currentMenu = sodexoMyyrmakiEn;
+            title.innerHTML = 'Lunch Menu Myyrmäki';
           }
         }
         renderCourseList(currentMenu);
