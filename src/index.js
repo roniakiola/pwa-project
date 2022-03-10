@@ -20,6 +20,19 @@ const info = document.querySelector('.info');
 const title = document.querySelector('#title');
 const hsl = document.querySelector('#hsl');
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('./service-worker.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration);
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
 let renderCourseList = (menu) => {
   let courseList = document.querySelector('.lists');
   courseList.innerHTML = '';
@@ -60,6 +73,77 @@ let renderCourseList = (menu) => {
     courseList.appendChild(mealContainer);
   });
 };
+
+const fetchHslData = () => {
+  fetchData(HSLData.apiUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/graphql' },
+    body: HSLData.getQueryForStopsByLocation(location),
+  }).then((response) => {
+    let busNumber = document.querySelector('#busnumber');
+    let busDest = document.querySelector('#destination');
+    let busArrival = document.querySelector('#arrival');
+    busNumber.innerHTML = '';
+    busDest.innerHTML = '';
+    busArrival.innerHTML = '';
+    console.log('hsl-data', response.data.stopsByRadius);
+    for (let i = 0; i < response.data.stopsByRadius.edges.length; i++) {
+      const stop = response.data.stopsByRadius.edges[i].node.stop;
+      let timeHours = new Date(
+        (stop.stoptimesWithoutPatterns[0].realtimeArrival +
+          stop.stoptimesWithoutPatterns[0].serviceDay) *
+          1000
+      ).getHours();
+      let timeMinutes = new Date(
+        (stop.stoptimesWithoutPatterns[0].realtimeArrival +
+          stop.stoptimesWithoutPatterns[0].serviceDay) *
+          1000
+      ).getMinutes();
+      console.log(timeMinutes);
+      if (timeMinutes < 10) {
+        timeMinutes = `0${timeMinutes}`;
+      }
+      if (timeHours < 10) {
+        timeHours = `0${timeHours}`;
+      }
+      /* ${stop.name} */
+      busses.push(`${stop.stoptimesWithoutPatterns[0].trip.tripHeadsign}`);
+      destination.push(
+        `${stop.stoptimesWithoutPatterns[0].trip.routeShortName}`
+      );
+      time.push(`${timeHours}:${timeMinutes}`);
+      let busLi = document.createElement('li');
+      let destLi = document.createElement('li');
+      let arrLi = document.createElement('li');
+      busLi.innerHTML = busses[i];
+      destLi.innerHTML = destination[i];
+      arrLi.innerHTML = time[i];
+
+      busNumber.appendChild(busLi);
+      busDest.appendChild(destLi);
+      busArrival.appendChild(arrLi);
+    }
+    busses = [];
+    destination = [];
+    time = [];
+  });
+};
+
+/**
+ * Update weather every hour
+ */
+setInterval(() => {
+  getWeather(cityCode);
+  console.log('weather update');
+}, 3600000);
+
+/**
+ * Update hsl-data every minute
+ */
+setInterval(() => {
+  fetchHslData();
+  console.log('hsl update');
+}, 60000);
 
 const init = async () => {
   const fazerArabiaFi = await FazerData.arabiaFi;
@@ -188,116 +272,11 @@ const init = async () => {
         }
         renderCourseList(currentMenu);
         getWeather(cityCode);
-        fetchData(HSLData.apiUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/graphql' },
-          body: HSLData.getQueryForStopsByLocation(location),
-        }).then((response) => {
-          let busNumber = document.querySelector('#busnumber');
-          let busDest = document.querySelector('#destination');
-          let busArrival = document.querySelector('#arrival');
-          busNumber.innerHTML = '';
-          busDest.innerHTML = '';
-          busArrival.innerHTML = '';
-          console.log('hsl-data', response.data.stopsByRadius);
-          for (let i = 0; i < response.data.stopsByRadius.edges.length; i++) {
-            const stop = response.data.stopsByRadius.edges[i].node.stop;
-            let timeHours = new Date(
-              (stop.stoptimesWithoutPatterns[0].realtimeArrival +
-                stop.stoptimesWithoutPatterns[0].serviceDay) *
-                1000
-            ).getHours();
-            let timeMinutes = new Date(
-              (stop.stoptimesWithoutPatterns[0].realtimeArrival +
-                stop.stoptimesWithoutPatterns[0].serviceDay) *
-                1000
-            ).getMinutes();
-            console.log(timeMinutes);
-            if (timeMinutes < 10) {
-              timeMinutes = `0${timeMinutes}`;
-            }
-            if (timeHours < 10) {
-              timeHours = `0${timeHours}`;
-            }
-            /* ${stop.name} */
-            busses.push(
-              `${stop.stoptimesWithoutPatterns[0].trip.tripHeadsign}`
-            );
-            destination.push(
-              `${stop.stoptimesWithoutPatterns[0].trip.routeShortName}`
-            );
-            time.push(`${timeHours}:${timeMinutes}`);
-            let busLi = document.createElement('li');
-            let destLi = document.createElement('li');
-            let arrLi = document.createElement('li');
-            busLi.innerHTML = busses[i];
-            destLi.innerHTML = destination[i];
-            arrLi.innerHTML = time[i];
-
-            busNumber.appendChild(busLi);
-            busDest.appendChild(destLi);
-            busArrival.appendChild(arrLi);
-          }
-          busses = [];
-          destination = [];
-          time = [];
-        });
+        fetchHslData();
       };
     }
   };
   changeCampus(language);
-
-  fetchData(HSLData.apiUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/graphql' },
-    body: HSLData.getQueryForStopsByLocation(location),
-  }).then((response) => {
-    let busNumber = document.querySelector('#busnumber');
-    let busDest = document.querySelector('#destination');
-    let busArrival = document.querySelector('#arrival');
-    busNumber.innerHTML = '';
-    busDest.innerHTML = '';
-    busArrival.innerHTML = '';
-    console.log('hsl-data', response.data.stopsByRadius);
-    for (let i = 0; i < response.data.stopsByRadius.edges.length; i++) {
-      const stop = response.data.stopsByRadius.edges[i].node.stop;
-      let timeHours = new Date(
-        (stop.stoptimesWithoutPatterns[0].realtimeArrival +
-          stop.stoptimesWithoutPatterns[0].serviceDay) *
-          1000
-      ).getHours();
-      let timeMinutes = new Date(
-        (stop.stoptimesWithoutPatterns[0].realtimeArrival +
-          stop.stoptimesWithoutPatterns[0].serviceDay) *
-          1000
-      ).getMinutes();
-      console.log(timeMinutes);
-      if (timeMinutes < 10) {
-        timeMinutes = `0${timeMinutes}`;
-      }
-      if (timeHours < 10) {
-        timeHours = `0${timeHours}`;
-      }
-      /* ${stop.name} */
-      busses.push(`${stop.stoptimesWithoutPatterns[0].trip.tripHeadsign}`);
-      destination.push(
-        `${stop.stoptimesWithoutPatterns[0].trip.routeShortName}`
-      );
-      time.push(`${timeHours}:${timeMinutes}`);
-      let busLi = document.createElement('li');
-      let destLi = document.createElement('li');
-      let arrLi = document.createElement('li');
-      busLi.innerHTML = busses[i];
-      destLi.innerHTML = destination[i];
-      arrLi.innerHTML = time[i];
-
-      busNumber.appendChild(busLi);
-      busDest.appendChild(destLi);
-      busArrival.appendChild(arrLi);
-    }
-    busses = [];
-    destination = [];
-    time = [];
-  });
+  fetchHslData();
 };
 init();

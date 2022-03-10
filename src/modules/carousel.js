@@ -5,9 +5,9 @@ const carousel = () => {
 
   /**
    * Switches sections shown in 20 sec cycles
-   * 
+   *
    * @param {Number} activeView - number for section in const views
-   * 
+   *
    */
   const createViewCarousel = (activeView) => {
     if (carousel == true) {
